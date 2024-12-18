@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Pixel Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+        #loginForm {
+            margin-top: 50px;
+        }
+        #numbers {
+            display: none;
+            font-size: 50px;
+            color: green;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Cool Pixel Game</h1>
+    <div id="loginForm">
+        <input type="email" id="email" placeholder="Enter your Gmail" required>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="numbers"></div>
+
+    <script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Simulating a login check
+            if (email && password) {
+                document.body.style.backgroundColor = 'black';
+                document.getElementById('loginForm').style.display = 'none';
+                displayNumbers();
+            } else {
+                alert('Please enter valid credentials.');
+            }
+        }
+
+        function displayNumbers() {
+            const numbersDiv = document.getElementById('numbers');
+            numbersDiv.style.display = 'block';
+            for (let i = 1; i <= 6; i++) {
+                numbersDiv.innerHTML += i + ' ';
+            }
+        }
+    </script>
+</body>
+</html>
